@@ -1,0 +1,78 @@
+@use "@/styles/tokens" as t;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: t.$space-12 t.$space-6;
+}
+
+.card {
+  max-width: 560px;
+  width: 100%;
+  padding: t.$space-8;
+  background: t.$color-surface;
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-lg;
+  box-shadow: t.$shadow-md;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px t.$space-3;
+  border-radius: 999px;
+  background: rgba(255, 107, 107, 0.12);
+  color: t.$color-danger;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: t.$space-4;
+}
+
+.title {
+  margin: 0 0 t.$space-3;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.body {
+  margin: 0 0 t.$space-6;
+  color: t.$color-text-muted;
+
+  code {
+    background: t.$color-surface-alt;
+    padding: 2px t.$space-2;
+    border-radius: t.$radius-sm;
+    font-family: t.$font-mono;
+    font-size: 0.85rem;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: t.$space-3;
+  flex-wrap: wrap;
+}
+
+.link,
+.retry {
+  padding: t.$space-3 t.$space-4;
+  border-radius: t.$radius-md;
+  border: 1px solid t.$color-border;
+
+  &:hover {
+    text-decoration: none;
+    background: t.$color-surface-alt;
+  }
+}
+
+.retry {
+  background: t.$color-primary;
+  color: #0b1020;
+  border-color: transparent;
+
+  &:hover {
+    background: t.$color-primary-700;
+    color: #fff;
+  }
+}

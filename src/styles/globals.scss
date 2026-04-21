@@ -1,0 +1,57 @@
+@use "./tokens" as t;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: t.$color-bg;
+  color: t.$color-text;
+  font-family: t.$font-sans;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: t.$color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    @include t.focus-ring;
+    border-radius: t.$radius-sm;
+  }
+}
+
+button {
+  font-family: inherit;
+
+  &:focus-visible {
+    @include t.focus-ring;
+  }
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+
+  &:focus-visible {
+    @include t.focus-ring;
+  }
+}
+
+::selection {
+  background: rgba(108, 139, 255, 0.35);
+}

@@ -1,0 +1,65 @@
+@use "@/styles/tokens" as t;
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: t.$space-8 t.$space-6 t.$space-12;
+}
+
+.header {
+  margin-bottom: t.$space-6;
+}
+
+.title {
+  margin: 0 0 t.$space-1;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+  color: t.$color-text-muted;
+  strong {
+    color: t.$color-text;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: t.$space-5;
+  list-style: none;
+  padding: 0;
+  margin: t.$space-6 0 0;
+}
+
+.empty {
+  margin-top: t.$space-8;
+  padding: t.$space-8;
+  text-align: center;
+  background: t.$color-surface;
+  border: 1px dashed t.$color-border;
+  border-radius: t.$radius-lg;
+  color: t.$color-text-muted;
+
+  h2 {
+    margin: 0 0 t.$space-2;
+    color: t.$color-text;
+    font-size: 1.1rem;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: t.$breakpoint-lg) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

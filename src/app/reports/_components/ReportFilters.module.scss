@@ -1,0 +1,104 @@
+@use "@/styles/tokens" as t;
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-3;
+  padding: t.$space-4;
+  background: t.$color-surface;
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-lg;
+}
+
+.searchWrap {
+  position: relative;
+}
+
+.search {
+  width: 100%;
+  background: t.$color-surface-alt;
+  color: t.$color-text;
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-md;
+  padding: t.$space-3 t.$space-4;
+  font-size: 0.95rem;
+
+  &::placeholder {
+    color: t.$color-text-muted;
+  }
+}
+
+.pending {
+  position: absolute;
+  right: t.$space-4;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: t.$color-text-muted;
+  letter-spacing: 0.04em;
+}
+
+.selects {
+  display: flex;
+  gap: t.$space-3;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 140px;
+  min-width: 140px;
+
+  select {
+    background: t.$color-surface-alt;
+    color: t.$color-text;
+    border: 1px solid t.$color-border;
+    border-radius: t.$radius-md;
+    padding: t.$space-2 t.$space-3;
+    font-size: 0.9rem;
+    height: 38px;
+  }
+}
+
+.fieldLabel {
+  font-size: 0.7rem;
+  color: t.$color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.orderButton,
+.resetButton {
+  height: 38px;
+  padding: 0 t.$space-4;
+  background: t.$color-surface-alt;
+  color: t.$color-text;
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-md;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 120ms ease;
+
+  &:hover {
+    background: rgba(108, 139, 255, 0.1);
+    border-color: rgba(108, 139, 255, 0.4);
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

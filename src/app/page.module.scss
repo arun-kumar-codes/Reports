@@ -1,0 +1,96 @@
+@use "@/styles/tokens" as t;
+
+.hero {
+  padding: t.$space-12 t.$space-6;
+}
+
+.heroInner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.kicker {
+  color: t.$color-text-muted;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 t.$space-3;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 t.$space-4;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #eef2ff, #9ab1ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin: 0 0 t.$space-6;
+  color: t.$color-text-muted;
+  font-size: 1.05rem;
+  max-width: 640px;
+}
+
+.actions {
+  display: flex;
+  gap: t.$space-3;
+  margin-bottom: t.$space-10;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  padding: t.$space-3 t.$space-5;
+  border-radius: t.$radius-md;
+  font-weight: 600;
+  border: 1px solid transparent;
+  background: t.$color-primary;
+  color: #0b1020;
+  transition: transform 120ms ease, background-color 120ms ease;
+
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+    background: t.$color-primary-700;
+    color: #fff;
+  }
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: t.$space-4;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: t.$space-2;
+    padding: t.$space-4;
+    background: t.$color-surface;
+    border: 1px solid t.$color-border;
+    border-radius: t.$radius-lg;
+
+    strong {
+      color: t.$color-text;
+    }
+    span {
+      color: t.$color-text-muted;
+      font-size: 0.92rem;
+    }
+  }
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}

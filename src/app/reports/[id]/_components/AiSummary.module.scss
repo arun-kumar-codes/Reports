@@ -1,0 +1,197 @@
+@use "@/styles/tokens" as t;
+
+.card {
+  padding: t.$space-5;
+  border-radius: t.$radius-lg;
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(79, 209, 197, 0.12), transparent 60%),
+    radial-gradient(120% 120% at 100% 0%, rgba(108, 139, 255, 0.18), transparent 55%),
+    t.$color-surface;
+  border: 1px solid rgba(108, 139, 255, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-4;
+}
+
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: t.$space-3;
+  flex-wrap: wrap;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-2;
+}
+
+.sparkle {
+  color: t.$color-accent;
+  text-shadow: 0 0 10px rgba(79, 209, 197, 0.7);
+}
+
+.subtitle {
+  margin: 0;
+  color: t.$color-text-muted;
+  font-size: 0.85rem;
+}
+
+.regenerate {
+  background: t.$color-primary;
+  color: #0b1020;
+  border: none;
+  padding: t.$space-2 t.$space-4;
+  border-radius: t.$radius-md;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+
+  &:hover:not(:disabled) {
+    background: t.$color-primary-700;
+    color: #fff;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: progress;
+  }
+}
+
+.body {
+  min-height: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-3;
+}
+
+.muted {
+  margin: 0;
+  color: t.$color-text-muted;
+  font-size: 0.92rem;
+
+  em {
+    color: t.$color-text;
+    font-style: normal;
+    font-weight: 500;
+  }
+}
+
+.summaryText {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer {
+  display: flex;
+  gap: t.$space-3;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.78rem;
+  color: t.$color-text-muted;
+}
+
+.sourceTag {
+  padding: 2px t.$space-2;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.sourceLive {
+  background: rgba(74, 222, 128, 0.14);
+  color: t.$color-success;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.sourceMock {
+  background: rgba(108, 139, 255, 0.14);
+  color: t.$color-primary;
+  border: 1px solid rgba(108, 139, 255, 0.3);
+}
+
+.model {
+  font-family: t.$font-mono;
+  font-size: 0.72rem;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-2;
+  padding: t.$space-3 t.$space-4;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.35);
+  border-radius: t.$radius-md;
+  color: t.$color-text;
+
+  strong {
+    color: t.$color-danger;
+  }
+  span {
+    color: t.$color-text-muted;
+    font-size: 0.9rem;
+  }
+}
+
+.retry {
+  align-self: flex-start;
+  background: transparent;
+  color: t.$color-danger;
+  border: 1px solid rgba(255, 107, 107, 0.5);
+  padding: 4px t.$space-3;
+  border-radius: t.$radius-sm;
+  cursor: pointer;
+  font-size: 0.8rem;
+
+  &:hover {
+    background: rgba(255, 107, 107, 0.12);
+  }
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-2;
+}
+
+.skeletonLine {
+  display: block;
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.04)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
