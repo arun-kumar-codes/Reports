@@ -1,0 +1,98 @@
+@use "@/styles/tokens" as t;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid t.$color-border;
+  background: rgba(11, 16, 32, 0.85);
+  backdrop-filter: saturate(140%) blur(8px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: t.$space-6;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: t.$space-4 t.$space-6;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-2;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: t.$color-text;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.logoDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, t.$color-primary, t.$color-accent);
+  box-shadow: 0 0 12px rgba(108, 139, 255, 0.7);
+}
+
+.nav {
+  display: flex;
+  gap: t.$space-4;
+  margin-left: auto;
+}
+
+.navLink {
+  color: t.$color-text-muted;
+  font-weight: 500;
+
+  &:hover {
+    color: t.$color-text;
+    text-decoration: none;
+  }
+}
+
+.roleControl {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-2;
+}
+
+.roleLabel {
+  font-size: 0.8rem;
+  color: t.$color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.roleSelect {
+  background: t.$color-surface-alt;
+  color: t.$color-text;
+  border: 1px solid t.$color-border;
+  border-radius: t.$radius-sm;
+  padding: 6px t.$space-3;
+  font-size: 0.85rem;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: progress;
+  }
+}
+
+.roleError {
+  color: t.$color-danger;
+  font-size: 0.8rem;
+}
+
+@media (max-width: t.$breakpoint-md) {
+  .inner {
+    flex-wrap: wrap;
+    gap: t.$space-3;
+  }
+  .nav {
+    margin-left: 0;
+  }
+}
